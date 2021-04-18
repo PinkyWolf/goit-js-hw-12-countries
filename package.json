@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PinkyWolf/goit-js-hw-12-countries.git"
+    "url": "git+https://github.com/luxplanjay/webpack-starter-kit.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PinkyWolf/goit-js-hw-12-countries/issues"
+    "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
   },
   "homepage": "https://github.com/PinkyWolf/goit-js-hw-12-countries",
   "devDependencies": {
