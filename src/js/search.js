@@ -1,7 +1,9 @@
 import '@pnotify/core/dist/BrightTheme.css';
+
 import oneCountryQuery from '../templates/countryFind.hbs'
 import countryList from '../templates/manyCountries.hbs'
-import countrySearch from '../js/fetchCountries.js'
+
+import countrySearch from './fetchCountries.js'
 import { alert } from '@pnotify/core/dist/PNotify.js';
 
 const searchForm = document.querySelector('.js-search-form');
