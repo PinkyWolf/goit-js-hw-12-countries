@@ -18,22 +18,8 @@ function countrySearchInputHandler(e) {
   clearArticlesContainer();
    const searchQuery = e.target.value;
   
-  
   countrySearch.fetchCountries(searchQuery).then(data => {
-    
-      if (data.length > 10) {
-          alert({
-              text: "Too many matches found. Please enter a more specific query!"
-          });
-      } else if (data.status === 404) {
-        alert({
-          text: "No country has been found. Please enter a more specific query!"
-      });
-      } else if (data.length === 1) {
-          createMarkup(data, oneCountryQuery);
-      } else if (data.length <= 10) {
-          createMarkup(data, countryList);
-      }
+    errorHandler(data)    
   })
   .catch(Error => {
       alert({
@@ -41,6 +27,27 @@ function countrySearchInputHandler(e) {
       });
       console.log(Error)
   })
+}
+
+function errorHandler(data) {
+
+    const specifyAlert = alert({
+        text: "Too many matches found. Please enter a more specific query!"
+    });
+    const notFoundAlert = alert({
+          text: "No country has been found. Please enter a more specific query!"
+    });
+    
+
+   if (data.length > 10) {
+        specifyAlert
+      } else if (data.status === 404) {
+        notFoundAlert
+      } else if (data.length === 1) {
+          createMarkup(data, oneCountryQuery);
+      } else if (data.length <= 10) {
+          createMarkup(data, countryList);
+      } 
 }
 
 function createMarkup(countryes, template) {
